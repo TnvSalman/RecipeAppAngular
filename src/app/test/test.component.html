@@ -1,0 +1,11 @@
+<h1>Test component</h1>
+<input 
+type="text" 
+[(ngModel)]="inputValue"
+>
+<p>{{inputValue}}</p>
+<button 
+class="btn btn-primary my-3"
+[disabled]="(inputValue)"
+(click)="resetBook()"
+>Add Book</button>
