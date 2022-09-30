@@ -3,19 +3,22 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-test',
   templateUrl: './test.component.html',
-  styleUrls: ['./test.component.scss']
+  styles: [`
+  .font-color{
+    color:white;
+  }
+  `]
 })
 export class TestComponent implements OnInit {
-  inputValue:string = "";
-  buttonChecker:boolean = this.inputValue ? false : true;
-
+  displayStatus:boolean = false;
+  incrementNumber: number[] = [0];
+  
   constructor() { }
 
   ngOnInit(): void {
   }
-  resetBook(){
-    this.inputValue = ""
+  onDisplayStatus(){
+    this.displayStatus = !this.displayStatus;
+    this.incrementNumber.push(this.incrementNumber.length + 1)
   }
-
-
 }

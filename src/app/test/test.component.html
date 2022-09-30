@@ -1,11 +1,13 @@
-<h1>Test component</h1>
-<input 
-type="text" 
-[(ngModel)]="inputValue"
->
-<p>{{inputValue}}</p>
-<button 
-class="btn btn-primary my-3"
-[disabled]="(inputValue)"
-(click)="resetBook()"
->Add Book</button>
+<button
+class="btn btn-primary"
+(click)="onDisplayStatus()"
+>Display Details</button>
+<p class="my-3" *ngIf="displayStatus" >Secret password = "tuna"</p>
+
+
+<p 
+*ngFor="let number of incrementNumber"  
+[ngStyle]="{'background-color':(number > 4 ? 'blue':'transparent')}" 
+[ngClass]="{'font-color': number > 4}"
+>{{number}}
+</p>
